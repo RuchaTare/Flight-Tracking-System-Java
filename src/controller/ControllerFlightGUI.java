@@ -1,6 +1,9 @@
 package controller;
 
+import java.util.ArrayList;
+
 import model.AirlinesReport;
+import model.Flight;
 import model.ListOfAeroplanes;
 import model.ListOfAirlines;
 import model.ListOfAirports;
@@ -12,6 +15,7 @@ public class ControllerFlightGUI {
     private ListOfAirlines listOfAirlines;
     private ListOfAirports listOfAirports;
     private ListOfAeroplanes listOfAeroplanes;
+    private Flight flight;
 
     public ControllerFlightGUI() {
         //initialise empty list of flight tracker elements
@@ -36,6 +40,9 @@ public class ControllerFlightGUI {
 
     }
 
+
+
+
     public void createReport(){
         var rep = new AirlinesReport(listOfAirlines, listOfFlights);
         rep.WriteToFile();
@@ -45,8 +52,20 @@ public class ControllerFlightGUI {
         //create main GUI with gsCompetitorList object
         FlightGUI gui = new FlightGUI(listOfFlights,listOfAirlines,listOfAirports, listOfAeroplanes);
         gui.setVisible(true);
+        
 
     }
+
+    public void tryThis() throws InterruptedException{
+        
+        ArrayList<Flight> list = listOfFlights.flightIterator();
+        for(Flight f: list){
+            
+            f.start();
+            Thread.sleep(60000);
+            }
+            // f.interrupt();
+        }
 
     public void updateGUI(){
         listOfAeroplanes = new ListOfAeroplanes();

@@ -3,6 +3,27 @@ package model;
 import java.util.ArrayList;
 
 public class Main {
+        private ListOfFlights listOfFlights;
+        private ListOfAirlines listOfAirlines;
+        private ListOfAirports listOfAirports;
+        private ListOfAeroplanes listOfAeroplanes;
+        private Flight flight;
+        private ControlTower controlTower;
+        
+
+
+
+
+public void tryThis() throws InterruptedException{
+        Object rowData[] = new Object[9];
+        ArrayList<Flight> list = listOfFlights.flightIterator();
+        for(Flight f: list){
+            f.start();
+            Thread.sleep(60000);
+            f.interrupt();
+            
+        }}
+        
     public static void main(String[] args) throws InterruptedException{
             
         var plane1 = new Aeroplane("B777", "Boeing", 875, 952.78815);
@@ -12,6 +33,8 @@ public class Main {
 //        System.out.println(plane1.getSpeed());
 //        System.out.println(plane1.getModel());
 //        System.out.println(plane1.toString());
+
+
 //
 
 
@@ -102,15 +125,15 @@ public class Main {
 
         // f.setInitialPosition(airport1.getControlTower().getLocation());
         // f.setNext(airport3.getControlTower().getLocation());
-        f.setName("AF666");
-        f.start();
+       
+        // f.start();
+        // f2.start();
         
-        Thread.sleep(60000);
+        // Thread.sleep(60000);
         // System.out.println(f.getFlightNumber()+ " has arrived");
         // System.out.println(f.getFlightPlan().getSize());
-        f.interrupt();
+        // f.interrupt();
+        // f2.interrupt();
+        
 
-
-
-    }
-}
+    }}

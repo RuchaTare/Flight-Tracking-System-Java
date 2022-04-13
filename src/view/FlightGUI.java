@@ -28,6 +28,8 @@ public class FlightGUI extends JFrame implements ActionListener {
     private ListOfAirlines listOfAirlines;
     private ListOfAirports listOfAirports;
     private ListOfAeroplanes listOfAeroplanes;
+    private Flight flight;
+    private ControlTower controlTower;
 
     //Components
     JLabel lblFlights, lblFlightPlanTitle, lblDistance, lblTime, lblKilometere, lblFuelConsumption, lblLitre;
@@ -119,9 +121,25 @@ public class FlightGUI extends JFrame implements ActionListener {
             rowData[3] = f.getArrivalAirport().getAirportCode();
             rowData[4] = f.getDepartureDate();
             rowData[5] = f.getDepartureTime();
-
             model.addRow(rowData);
         }
+
+        ListSelectionModel cellSelectionModel = flightTable.getSelectionModel();
+        cellSelectionModel.addListSelectionListener(new ListSelectionListener() {
+            public void valueChanged(ListSelectionEvent event) {
+
+                int viewRow = flightTable.getSelectedRow();
+
+                if (!event.getValueIsAdjusting() && viewRow != -1) {
+                    int columnIndex = 0;
+                    int modelRow = flightTable.convertRowIndexToModel(viewRow);
+                    Object modelvalue = flightTable.getModel().getValueAt(modelRow, columnIndex);
+        
+                    rowData[8] = 1;
+
+                }
+            }
+        });
 
         flightPanel.add(scrollPane);
 
@@ -207,8 +225,28 @@ public class FlightGUI extends JFrame implements ActionListener {
 
                     txtDistance.setText(Integer.toString(i));
 
-                }
-            }
+                
+                SwingWorker<Void, Void> worker = new SwingWorker<Void,Void>() {
+
+                    @Override
+                    protected Void doInBackground() throws Exception {
+                        
+                            
+                            ArrayList<Flight> list = listOfFlights.flightIterator();
+                            for(Flight f: list){
+                                f.start();
+                                Thread.sleep(60000);
+                                f.interrupt();}
+                                
+                            
+                        return null;
+                    }
+                    
+                };
+                worker.execute();
+
+            }}
+
         });
         detailsPanel.add(txtDistance);
 
@@ -764,7 +802,7 @@ public class FlightGUI extends JFrame implements ActionListener {
                     destinationComboBox.setSelectedItem("Choose..");
                     txtDate.setText("");
 
-                    this.invalidate();
+                    // this.invalidate();
                     ControllerFlightGUI demo = new ControllerFlightGUI();
                     demo.updateGUI();
 
@@ -801,8 +839,7 @@ public class FlightGUI extends JFrame implements ActionListener {
         // destinationComboBox.setSelectedItem("Choose..");
         // txtDate.setText("");
                
-
-    }
-
-    
+  
 }
+}
+

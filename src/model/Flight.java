@@ -168,7 +168,7 @@ public class Flight extends Thread{
             int a = 0;
             next = getFlightPlan().getAtIndex(a+1).getControlTower().getLocation();
             GPSCoordinates prev = getFlightPlan().getAtIndex(i+1).getControlTower().getLocation();
-            double distance = (getAeroplane().getSpeed() * 0.25/5);
+            double distance = (getAeroplane().getSpeed() * 0.25/15);
             position = getDepartureAirport().getControlTower().getLocation();
             
 

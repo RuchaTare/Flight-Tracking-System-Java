@@ -1,16 +1,2 @@
 BA534; British Airways; B777; LHR; SFO; 2022-01-12; 14:00:00; LHR; MIA; SFO
 AF650; Air France; A350; CDG; DXB; 2022-01-01; 23:00:00; CDG; FCO; IST; DXB
-B54Y; Trans Mediterranean Airways; B747-B; EDI; KUT; 2022-05-05; 12:00:00; EDI; DXB; SYD; SFO; KUT
-AG34; Air Greenland; LCX; EDI; SYD; 2021-07-08; 12:00:00; EDI; JED; SFO; SYD
-SA34; Saudi Arabian Airlines; A350; SYD; EDI; 2022-09-09; 12:00:00; SYD; JED; EDI
-TC21; TACA; LCX; SIN; SYD; 2022-06-06; 14:00:00; SIN; SYD
-AG23; Air Greenland; B747-B; KUT; SYD; 2022-12-12; 14:00:00; KUT; SYD
-KG76; Trans Mediterranean Airways; LCX; JED; EDI; 2022-09-08; 12:00:00; JED; EDI
-KG76; TACA; A330; DXB; EDI; 2022-01-01; 13:00:00; DXB; EDI
-TA23; Thai Airways; LCX; EDI; BKK; 2022-09-09; 11:00:00; EDI; BKK
-kh77; Trans Mediterranean Airways; LCX; EDI; SFO; 2022-01-01; 13:00:00; EDI; SFO
-kh55; Trans Mediterranean Airways; LCX; KUT; SYD; 2022-13-04; 10:00:00; KUT; SYD
-kh88; Trans Mediterranean Airways; LCX; SFO; SIN; 2022-02-02; 12:00:00; SFO; SIN
-fr54; Trans Mediterranean Airways; LCX; DXB; SIN; 2022-12-12; 12:00:00; DXB; SIN
-ai78; Thai Airways; LCX; KUT; SYD; 2022-02-02; 12:00:00; KUT; SYD
-TM12; Trans Mediterranean Airways; LCX; KUT; SYD; 2022-12-12; 12:00:00; KUT; SYD
