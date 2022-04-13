@@ -1,12 +1,10 @@
 ON-FLIGHT: 
-Flight-Number: 66, Current-Position: GPS [lat = 51.58, lon = -0.37], Distance-Travelled: 13.333333333333334, Flight-Duration: 0 hours : 1 minutes, Control-Tower: EDI, Status: In flight
+Flight-Number: AI5677, Current-Position: GPS [lat = 21.77, lon = 39.10], Distance-Travelled: 13.333333333333334, Flight-Duration: 0 hours : 1 minutes, Control-Tower: EDI, Status: In flight
+NEW-FLIGHT-ADDED-TO-SCHEDULE: 
+BA8288; British Airways; B747-B; EDI; LHR; 2022-04-14; 12:00:00; EDI; LHR
 ON-FLIGHT: 
-Flight-Number: 334, Current-Position: GPS [lat = 21.77, lon = 39.10], Distance-Travelled: 13.333333333333334, Flight-Duration: 0 hours : 1 minutes, Control-Tower: EDI, Status: In flight
+Flight-Number: LC111, Current-Position: GPS [lat = 56.01, lon = 3.27], Distance-Travelled: 12.333333333333334, Flight-Duration: 0 hours : 1 minutes, Control-Tower: SFO, Status: In flight
 ON-FLIGHT: 
-Flight-Number: 66, Current-Position: GPS [lat = 51.69, lon = -0.29], Distance-Travelled: 26.666666666666668, Flight-Duration: 0 hours : 2 minutes, Control-Tower: EDI, Status: In flight
+Flight-Number: AI5677, Current-Position: GPS [lat = 21.87, lon = 39.04], Distance-Travelled: 26.666666666666668, Flight-Duration: 0 hours : 2 minutes, Control-Tower: EDI, Status: In flight
 ON-FLIGHT: 
-Flight-Number: 334, Current-Position: GPS [lat = 21.87, lon = 39.04], Distance-Travelled: 26.666666666666668, Flight-Duration: 0 hours : 2 minutes, Control-Tower: EDI, Status: In flight
-ON-FLIGHT: 
-Flight-Number: 445, Current-Position: GPS [lat = 55.93, lon = 3.57], Distance-Travelled: 13.333333333333334, Flight-Duration: 0 hours : 1 minutes, Control-Tower: KUT, Status: In flight
-ON-FLIGHT: 
-Flight-Number: 66, Current-Position: GPS [lat = 51.79, lon = -0.21], Distance-Travelled: 40.0, Flight-Duration: 0 hours : 3 minutes, Control-Tower: EDI, Status: In flight
+Flight-Number: AI5677, Current-Position: GPS [lat = 21.77, lon = 39.10], Distance-Travelled: 13.333333333333334, Flight-Duration: 0 hours : 1 minutes, Control-Tower: EDI, Status: In flight

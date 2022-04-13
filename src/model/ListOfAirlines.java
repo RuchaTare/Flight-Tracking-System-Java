@@ -21,8 +21,6 @@ public class ListOfAirlines implements Iterable{
         return listOfAirlines;
     }
 
-
-
     public boolean readFileAirline() {
         this.listOfAirlines = new Hashtable<String, Airline>();
         BufferedReader br = null;
@@ -42,8 +40,8 @@ public class ListOfAirlines implements Iterable{
                 airlineName = airlineName.trim();
 
                 // create a aeroplane object and add to the list
-                Airline v = new Airline (airlineCode, airlineName, 0, 0, 0,new ArrayList<Flight>());
-                this.listOfAirlines.put(airlineCode, v);
+                Airline v = new Airline (airlineCode, airlineName, 0, 0, 0, new ArrayList<Flight>());
+                this.listOfAirlines.put(airlineName, v);
             }
         }
         // if the file is not found, stop with system exit
@@ -95,13 +93,10 @@ public class ListOfAirlines implements Iterable{
         return list;
     }
 
-    public Airline retrieveCompanyName(String airlineCode) {
-        return listOfAirlines.get(airlineCode);
+    public Airline retrieveCompanyName(String airlineName) {
+        return listOfAirlines.get(airlineName);
     }
 
-//    public ListOfFlights getListOfFlights() {
-//        return listOfFlights;
-//    }
 
     public ArrayList<Airline> airlineIterator () {
         var airlines = new ArrayList<Airline>();
