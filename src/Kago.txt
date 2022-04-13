@@ -1,4 +1,0 @@
-13th; Trans Mediterranean Airways; A330; KUT; SFO; 2022-01-02; 14:00:00; KUT; SYD; JED; EDI; SFO
-13th; Trans Mediterranean Airways; A330; KUT; SFO; 2022-01-02; 14:00:00; KUT; SYD; JED; EDI; SFO
-13th; Trans Mediterranean Airways; A330; KUT; SFO; 2022-01-02; 14:00:00; KUT; SYD; JED; EDI; Choose..
-ta123; Trans Mediterranean Airways; LCX; KUT; EDI; 2022-02-12; 23:00:00; KUT; SYD; JED; SIN; EDI

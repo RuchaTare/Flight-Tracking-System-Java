@@ -1,16 +1,16 @@
-LHR; Heathrow;51Â°28'12"N 0Â°27'15"W
-DXB; DubaÃ¯;25Â°15'9"N 55Â°21'52"E
-CDG; Paris Charles de Gaulle;49Â°0'35"N 2Â°32'52"E
-FCO; Leonardo Da Vinci;41Â°46'24"N 12Â°14'22"E
-MIA; Miami;25Â°47'35"N 80Â°17'26"W
-AUH; Abu Dhabi;24Â°25'58"N 54Â°38'40"E
-BOM; Mumbai;19Â°5'50"N 72Â°52'27"E
-IST; Istanbul;40Â°58'57"N 28Â°49'14"E
-JED; Jeddah;21Â°40'27"N 39Â°09'14"E
-BKK; Bangkok;13Â°41'23"N 100Â°45'0"E
-SYD; Sydney;33Â°56'50"S 151Â°10'45"E
-SIN; Singapore;1Â°21'33"N 103Â°59'21"E
-SFO; San Francisco;37Â°36'54"N 122Â°23'23"W
-EDI; Edinburgh;55Â°56'59"N -3Â°22'12"W
-KUT; KoutaÃ¯ssi;42Â°10'21"N 42Â°28'34"E
-ILD; Lleida;41Â°37'0"N 0Â°37'19"E
+LHR; Heathrow;51°28'12"N 0°27'15"W
+DXB; Dubaï;25°15'9"N 55°21'52"E
+CDG; Paris Charles de Gaulle;49°0'35"N 2°32'52"E
+FCO; Leonardo Da Vinci;41°46'24"N 12°14'22"E
+MIA; Miami;25°47'35"N 80°17'26"W
+AUH; Abu Dhabi;24°25'58"N 54°38'40"E
+BOM; Mumbai;19°5'50"N 72°52'27"E
+IST; Istanbul;40°58'57"N 28°49'14"E
+JED; Jeddah;21°40'27"N 39°09'14"E
+BKK; Bangkok;13°41'23"N 100°45'0"E
+SYD; Sydney;33°56'50"S 151°10'45"E
+SIN; Singapore;1°21'33"N 103°59'21"E
+SFO; San Francisco;37°36'54"N 122°23'23"W
+EDI; Edinburgh;55°56'59"N -3°22'12"W
+KUT; Koutaïssi;42°10'21"N 42°28'34"E
+ILD; Lleida;41°37'0"N 0°37'19"E
