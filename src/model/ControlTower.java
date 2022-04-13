@@ -45,7 +45,32 @@ public class ControlTower {
 	}
 
 	public void update(Flight f) {
-		System.out.println("Flight:" + f.getFlightNumber() + ": " +  f.getPosition() + "   Distance travelled: "+f.getDistanceTravelled()+"  Current Fuel Consumption; "+(int)f.getCurrentFuelConsumption()
-		+" CO2 Emissions: "+(int)f.getCurrentC02()+ " Current Flight Duration: "+ f.getCurrentDuration()+" Control Tower: "+ f.getTowerName()+" Next: "+f.getNext()+" STATUS: " +f.getStatus());
+
+        logger logs = logger.getInstance();
+
+        String flightNumber = f.getFlightNumber();
+        String position = f.getPosition().toString();
+        double distance = f.getDistanceTravelled();
+        String duration = f.getCurrentDuration();
+        String controlTower = f.getTowerName();
+        String status = f.getStatus();
+
+		System.out.println(" Flight: " + f.getFlightNumber() + ": " +  f.getPosition() + 
+                           " Distance travelled: " + f.getDistanceTravelled() +
+                           " Current Fuel Consumption: " + (int)f.getCurrentFuelConsumption() +
+                           " CO2 Emissions: " + (int)f.getCurrentC02() +  
+                           " Current Flight Duration: " + f.getCurrentDuration() + 
+                           " Control Tower: "+ f.getTowerName() + 
+                           " Next: " + f.getNext() + 
+                           " STATUS: " + f.getStatus());
+        
+        if (f.getStatus() == "In flight"){
+            logs.logOnFlight(flightNumber, position, distance, duration, controlTower, status);
+        }
+        else{  
+                if(f.getStatus() == "Arrived"){
+                    logs.logFlightLanded(flightNumber, position, distance, duration, controlTower, status);
+                }
+        }
 	}
 }

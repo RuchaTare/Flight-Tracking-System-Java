@@ -174,7 +174,6 @@ public class Flight extends Thread{
 
 			while(status!="Arrived") {
                 
-
                 if(i==(getFlightPlan().getSize()-1)){
                     i=i-1;
                 }
@@ -206,14 +205,11 @@ public class Flight extends Thread{
                 double y =(2.52*z);
                 currentCO2 = y;
 
-
                 //update time
                 double TT = distanceTravelled / aeroplane.getSpeed();
                 int hrs = (int) TT;
                 int mins = (int)(60 *(TT - hrs));
                 currentDuration = hrs + " hours" + " : " + mins  + " minutes";
-
-                
 
                 //get the distances from the previous and next control towers
                 double A = position.circleDistance(prev);
@@ -241,9 +237,7 @@ public class Flight extends Thread{
                 
 				// ControlTower obj = ControlTower.getControlTower();
 				obj.update(this);
-                
-
-				Thread.sleep(50);
+				Thread.sleep(60000);
             } 
             
 		} 

@@ -108,7 +108,7 @@ public class FlightGUI extends JFrame implements ActionListener {
 
         flightTable.setModel(dm);
         JScrollPane scrollPane = new JScrollPane(flightTable);
-        scrollPane.setBounds(5,30,870,300);
+        scrollPane.setBounds(5, 30, 870, 300);
 
         //Adds flight details into the flight details, from the flightlist initially created
         DefaultTableModel model = (DefaultTableModel) flightTable.getModel();
@@ -678,8 +678,14 @@ public class FlightGUI extends JFrame implements ActionListener {
 
     
     private void AddBtnActionPerformed() {
+
+        // creating an instance of the logger class
+        logger logs = logger.getInstance();
+
+
         //code to load data into table
         //Store the data inot a new instance of flight
+
                 //Retrieve values from the text boxes
                 String date = txtDate.getText();
                 String time = txtTimeAddFlight.getText();
@@ -766,25 +772,28 @@ public class FlightGUI extends JFrame implements ActionListener {
                 else if (airportComboBox1.getSelectedItem() !="Choose.."&&airportComboBox2.getSelectedItem()!="Choose.."&&airportComboBox3.getSelectedItem()!="Choose.."&&airportComboBox4.getSelectedItem()!="Choose.."&&airportComboBox5.getSelectedItem()!="Choose.."){
                     Files.write(Paths.get("src/listofflights.txt"),
                     output.getBytes(), StandardOpenOption.APPEND);
-
+                    logs.logAddFlight(output);
                 }
                 else if (airportComboBox3.getSelectedItem()=="Choose.."){
                     Files.write(Paths.get("src/listofflights.txt"),
                     output2.getBytes(), StandardOpenOption.APPEND);
+                    logs.logAddFlight(output2);
                 }
                 else if (airportComboBox4.getSelectedItem()=="Choose.."){
                     Files.write(Paths.get("src/listofflights.txt"),
                     output3.getBytes(), StandardOpenOption.APPEND);
+                    logs.logAddFlight(output3);
                 }
                 else if (airportComboBox5.getSelectedItem()=="Choose.."){
                     Files.write(Paths.get("src/listofflights.txt"),
                     output4.getBytes(), StandardOpenOption.APPEND);
+                    logs.logAddFlight(output4);
                 }
                 else if  (airportComboBox1.getSelectedItem() =="Choose.."||airportComboBox2.getSelectedItem()=="Choose.."||flightNo==null||airlineKey==null||planeKey==null||departKey==null||destKey==null||date==null||time==null){
                     Files.write(Paths.get("src/listofflights.txt"),
                     output.getBytes(), StandardOpenOption.APPEND);
+                    logs.logAddFlight(output);
                 }
-
                
                     JOptionPane.showMessageDialog(null, " Flight successfully added! ");
                     
@@ -805,10 +814,6 @@ public class FlightGUI extends JFrame implements ActionListener {
                     // this.invalidate();
                     ControllerFlightGUI demo = new ControllerFlightGUI();
                     demo.updateGUI();
-
-                    
-                    
-
                 }
 
                 catch(IOException e)

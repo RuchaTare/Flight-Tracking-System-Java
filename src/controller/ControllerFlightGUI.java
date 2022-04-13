@@ -40,9 +40,6 @@ public class ControllerFlightGUI {
 
     }
 
-
-
-
     public void createReport(){
         var rep = new AirlinesReport(listOfAirlines, listOfFlights);
         rep.WriteToFile();

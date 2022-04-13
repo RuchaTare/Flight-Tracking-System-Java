@@ -1,2 +1,7 @@
 BA534; British Airways; B777; LHR; SFO; 2022-01-12; 14:00:00; LHR; MIA; SFO
 AF650; Air France; A350; CDG; DXB; 2022-01-01; 23:00:00; CDG; FCO; IST; DXB
+66; British Airways; B747-B; LHR; EDI; ; ; LHR; EDI
+334; Turkish Airlines; A350; SYD; JED; 2022-04-13; 17:00:00; SYD; JED
+445; Air Greenland; B747-B; EDI; LHR; 2022-04-13; 17:10:00; EDI; KUT; LHR
+334; Thai Airways; A330; JED; EDI; 2022-04-13; 17:15:00; JED; EDI
+4488; Trans Mediterranean Airways; A350; SFO; DXB; 2022-04-13; 17:30:00; SFO; SIN; DXB
