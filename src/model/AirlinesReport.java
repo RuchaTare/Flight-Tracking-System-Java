@@ -19,7 +19,7 @@ public class AirlinesReport {
 
     public boolean WriteToFile() {
         try {
-            FileWriter fileWriter = new FileWriter("ReportFile");
+            FileWriter fileWriter = new FileWriter("ReportFile.txt");
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
                 bufferedWriter.write(listOfAirlines.airlineReportList());
