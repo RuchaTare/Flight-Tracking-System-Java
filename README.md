@@ -30,17 +30,17 @@ This application was developed on:
 
 * Reports created:
     * Reportfile - Includes cumulative data of all the airline operators flew that day in the below format - 
-        Airline: Japan Air System
-        Code: JD
-        Number of Flights: 1
-        Total Distance: 13887.0
-        Total Fuel Consumption: 106044.0
-        Total Emissions: 267230.0 
+            * Airline: Japan Air System
+            * Code: JD
+            * Number of Flights: 1
+            * Total Distance: 13887.0
+            * Total Fuel Consumption: 106044.0
+            * Total Emissions: 267230.0 
     * Logger File - Includes Logs of status changes in the flights. Sample data as below 
-        ON-FLIGHT: 
-        Flight-Number: AI5677, Current-Position: GPS [lat = 21.77, lon = 39.10], Distance-Travelled: 13.333333333333334, Flight-Duration: 0 hours : 1 minutes, Control-Tower: EDI, Status: In flight
-        NEW-FLIGHT-ADDED-TO-SCHEDULE: 
-        BA8288; British Airways; B747-B; EDI; LHR; 2022-04-14; 12:00:00; EDI; LHR
+            * ON-FLIGHT: 
+                Flight-Number: AI5677, Current-Position: GPS [lat = 21.77, lon = 39.10], Distance-Travelled: 13.333333333333334, Flight-Duration: 0 hours : 1 minutes, Control-Tower: EDI, Status: In flight
+            * NEW-FLIGHT-ADDED-TO-SCHEDULE: 
+                BA8288; British Airways; B747-B; EDI; LHR; 2022-04-14; 12:00:00; EDI; LHR
 
 ## Who do I talk to ?
 * This repository is maintained by
