@@ -15,7 +15,7 @@ public class ControllerFlightGUI {
     private ListOfAirlines listOfAirlines;
     private ListOfAirports listOfAirports;
     private ListOfAeroplanes listOfAeroplanes;
-    private Flight flight;
+    //private Flight flight;
 
     public ControllerFlightGUI() {
         //initialise empty list of flight tracker elements
@@ -35,9 +35,6 @@ public class ControllerFlightGUI {
         listOfAirlines = new ListOfAirlines(listOfFlights);
         listOfAirlines.readFileAirline();
         listOfAirlines.addFlights();
-
-
-
     }
 
     public void createReport(){

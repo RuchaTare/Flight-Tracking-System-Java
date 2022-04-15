@@ -242,7 +242,6 @@ public class Flight extends Thread{
             
 		} 
         catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         
