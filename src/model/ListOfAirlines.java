@@ -29,6 +29,11 @@ public class ListOfAirlines implements Iterable{
         try{
             File file = new File("src/listofairlines.txt");
             br = new BufferedReader( new FileReader(file));
+
+            // To execute the jar
+            // InputStream data = getClass().getResourceAsStream("src/listofairlines.txt");
+            // br = new BufferedReader(new InputStreamReader(data));
+
             while ((line = br.readLine()) != null){
                 String parts[] = line.split(";");
 

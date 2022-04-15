@@ -26,6 +26,11 @@ public class ListOfAeroplanes {
         try {
             File file = new File("src/listofplanes.txt");
             br = new BufferedReader(new FileReader(file));
+
+            // To execute the jar
+            // InputStream data = getClass().getResourceAsStream("src/listofplanes.txt");
+            // br = new BufferedReader(new InputStreamReader(data));
+
             while ((line = br.readLine()) != null) {
                 String parts[] = line.split(";");
 

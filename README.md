@@ -17,9 +17,17 @@ This repository is for Advanced Software Engineering
 This application was developed on:
 * Java 17.0.2 2022-01-18 LTS
 * Java(TM) SE Runtime Environment (build 17.0.2+8-LTS-86)
+
 ## Code Execution
+Navigate to the folder structure F21AS-Stage2 and execute the below command
+```bash
+java -jar F21AS-Stage2.jar
+```
 
 ## Dependencies
+* Swings 
+* Junit
+* Input files in the as-is folder structure 
 
 ## File Details
 * Data Files:

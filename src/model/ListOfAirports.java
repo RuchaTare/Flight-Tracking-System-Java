@@ -28,6 +28,11 @@ public class ListOfAirports {
         try{
             File file = new File("src/listofairports.txt");
             br = new BufferedReader( new FileReader(file));
+
+            // To execute the jar
+            // InputStream data = getClass().getResourceAsStream("src/listofairports.txt");
+            // br = new BufferedReader(new InputStreamReader(data));
+
             while ((line = br.readLine()) != null){
                 String parts[] = line.split(";");
                 String airportCode = parts[0];
