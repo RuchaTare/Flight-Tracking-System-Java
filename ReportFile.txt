@@ -1,0 +1,455 @@
+All Aeroplanes
+
+Airline: Japan Air System
+Code: JD
+Number of Flights: 2
+Total Distance: 44324.0
+Total Fuel Consumption: 410044.0
+Total Emissions: 1033310.0
+
+Airline: LAN Chile
+Code: LA
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Air India
+Code: AI
+Number of Flights: 1
+Total Distance: 4811.0
+Total Fuel Consumption: 57600.0
+Total Emissions: 145152.0
+
+Airline: Marioâ€™s Air
+Code: M2
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Tampa Airlines
+Code: QT
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: British Airways
+Code: BA
+Number of Flights: 2
+Total Distance: 11820.0
+Total Fuel Consumption: 112712.0
+Total Emissions: 284034.0
+
+Airline: TAM Brazilian Airlines
+Code: JJ
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Japan Airlines
+Code: JL
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: more AWB tracking
+Code: UL
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: China Airlines
+Code: CI
+Number of Flights: 1
+Total Distance: 32757.0
+Total Fuel Consumption: 392400.0
+Total Emissions: 988848.0
+
+Airline: Cargolux Airlines
+Code: CV
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Centurion Air Cargo
+Code: WE
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Kingfisher Airlines
+Code: IT
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: China Eastern Airlines
+Code: MU
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Xiamen Airlines
+Code: MF
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Air Europa Cargo
+Code: UX
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: China Cargo Airlines
+Code: CK
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: American Airlines
+Code: AA
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Cielos Airlines
+Code: A2
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Florida West International Airways
+Code: RF
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Finnair
+Code: AY
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: National Air Cargo
+Code: N8
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Air Malta
+Code: KM
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: KD Avia
+Code: KD
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Austrian Cargo
+Code: OS
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: British Midland Airways
+Code: BD
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Lufthansa Cargo AG
+Code: LH
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Yangtze River Express Airlines
+Code: Y8
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Kalitta Air
+Code: K4
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Aeroflot
+Code: SU
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Air Jamaica
+Code: JM
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Air Astana
+Code: KC
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: SAS-Scandinavian Airlines System
+Code: SK
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Biman Bangladesh
+Code: BG
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Alaska Airlines
+Code: AS
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: UPS Air Cargo
+Code: 5X
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Pakistan Int Ì?l Airlines
+Code: PK
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: SAC South American Airways
+Code: S6
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Kuwait Airways
+Code: KU
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Air Macau
+Code: NX
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Delta Air Lines
+Code: DL
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Caribbean Airlines
+Code: BW
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Shandong Airlines (Chinese)
+Code: SC
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Dragonair
+Code: KA
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: TAB Cargo
+Code: B1
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Air Seychelles
+Code: HM
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: CAL Cargo Air Lines
+Code: 5C
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Indian Airlines
+Code: IC
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: AirBridge Cargo
+Code: RU
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Cameroon Airlines
+Code: UY
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Air Niugini
+Code: PX
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Qatar Airways
+Code: QR
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Iberia
+Code: IB
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Atlas Air
+Code: 5Y
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Air Canada
+Code: AC
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: EL AL
+Code: LY
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Mandarin Airlines
+Code: AE
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Global Aviation and Services
+Code: 5S
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: LIAT Airlines
+Code: LI
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Middle East Airlines
+Code: ME
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Azerbaijan Airlines
+Code: J2
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Royal Brunei Airlines
+Code: BI
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Swiss
+Code: LX
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: Air Madagascar
+Code: MD
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel Consumption: 0.0
+Total Emissions: 0.0
+
+Airline: KLM Cargo
+Code: KL
+Number of Flights: 0
+Total Distance: 0.0
+Total Fuel

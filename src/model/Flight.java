@@ -5,6 +5,8 @@ import java.time.LocalTime;
 import java.util.TimerTask;
 import java.util.ResourceBundle.Control;
 
+import view.FlightGUI;
+
 public class Flight extends Thread{
     private String flightNumber;
     private Airline airline;
@@ -14,7 +16,7 @@ public class Flight extends Thread{
     private String departureDate;
     private String departureTime;
     private FlightPlan flightPlan;
-
+    
 
     public Flight(String flightNumber, Airline airline, Aeroplane aeroplane, Airport departureAirport, Airport arrivalAirport, String departureDate, String departureTime, FlightPlan flightPlan) {
         this.flightNumber = flightNumber;
@@ -64,8 +66,6 @@ public class Flight extends Thread{
         return (int) totalFC;
     }
 
-
-
     public String flightTotalTime() {
         double totalTT = flightPlan.getFlightPlanTotalDistance() / aeroplane.getSpeed();
         int hour = (int) totalTT;
@@ -73,7 +73,6 @@ public class Flight extends Thread{
         String duration = hour + " hours" + " : " + minutes  + " minutes";
 
         return duration;
-
     }
 
     public int getCO2Emissions() {
@@ -85,12 +84,6 @@ public class Flight extends Thread{
     public double getDistance() {
         return flightPlan.getFlightPlanTotalDistance();
     }
-
-//    public void addToAirlines(Airline o){
-//        if(airline.equals(o)){
-//            o.addFlight(flightNumber, this);
-//        }
-//    }
 
     @Override
     public String toString() {
@@ -114,7 +107,6 @@ public class Flight extends Thread{
     String towerName;
     String nextTower;
     String status;
-    // private double speed = aeroplane.getSpeed();
 
     public void setNext(GPSCoordinates next) {
 		this.next = next;
@@ -139,7 +131,6 @@ public class Flight extends Thread{
         return currentDuration;
     }
     public void setInitialPosition(GPSCoordinates position) {
-		// super();
 		this.position = position;
 	}
 
@@ -224,10 +215,12 @@ public class Flight extends Thread{
                     i++;
                     
                 }
+
                 //update status
                 if (distanceTravelled<getDistance()){
                 status = "In flight";
                 }
+
                 else{
                     status ="Arrived";
                 }
@@ -242,25 +235,13 @@ public class Flight extends Thread{
             
 		} 
         catch (InterruptedException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         
-        // System.out.println("The flight: "+getFlightNumber()+" Status: "+getStatus());
-        // System.out.println(getDistance());
-        // currentFuelConsumption = getTotalFuelConsumption();
-        // currentCO2 = getCurrentC02();
-        // currentDuration = flightTotalTime();
         System.out.println("TIME: "+flightTotalTime());
         System.out.println("DISTANCE: "+getDistance());
         System.out.println("FUEL: "+getTotalFuelConsumption());
-        System.out.println("CO2: "+getCO2Emissions());
-        // System.out.println(getNext());
-        // System.out.println(getAeroplane().getSpeed());
-        // System.out.println(getFlightPlan().getAtIndex(0).getControlTower().getLocation()+" - "+getFlightPlan().getAtIndex(0).getControlTower().getLocationName());
-        // System.out.println(getFlightPlan().getAtIndex(1).getControlTower().getLocation()+" - "+getFlightPlan().getAtIndex(1).getControlTower().getLocationName());
-        // System.out.println(getFlightPlan().getAtIndex(2).getControlTower().getLocation()+" - "+getFlightPlan().getAtIndex(2).getControlTower().getLocationName());
-
+        System.out.println("CO2: "+getCO2Emissions());  
 	}
-
-
 }

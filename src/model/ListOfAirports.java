@@ -15,9 +15,6 @@ public class ListOfAirports {
         this.listOfAirports = new Hashtable<String, Airport>();
     }
 
-   
-
- 
 
     public Hashtable<String, Airport> getListOfAirports() {
         return listOfAirports;
@@ -91,6 +88,10 @@ public class ListOfAirports {
             airs.add(a);
         }
         return airs;
+    }
+
+    public Airport getAirportDetails(String airportCode) {
+        return listOfAirports.get(airportCode);
     }
 
     public boolean CheckIfValExists(Airport airport) {

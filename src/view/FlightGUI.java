@@ -2,6 +2,11 @@ package view;
 
 import model.*;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Calendar;
+
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -28,8 +33,7 @@ public class FlightGUI extends JFrame implements ActionListener {
     private ListOfAirlines listOfAirlines;
     private ListOfAirports listOfAirports;
     private ListOfAeroplanes listOfAeroplanes;
-    private Flight flight;
-    private ControlTower controlTower;
+    private GPSCoordinates gpsCoordinates;
 
     //Components
     JLabel lblFlights, lblFlightPlanTitle, lblDistance, lblTime, lblKilometere, lblFuelConsumption, lblLitre;
@@ -38,7 +42,7 @@ public class FlightGUI extends JFrame implements ActionListener {
     JList listFlightPlanList;
 
     //PANELS
-    JPanel flightPanel;
+    private JPanel flightPanel;
 
     JTable flightTable;
     JComboBox<String> airlineComboBox = new JComboBox<String>();
@@ -52,13 +56,21 @@ public class FlightGUI extends JFrame implements ActionListener {
     JComboBox<String> destinationComboBox = new JComboBox<String>();
     JButton btnAdd, btnCancel, btnExit;
 
+
+    private String getDate(){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar cal = Calendar.getInstance();
+        String date = dateFormat.format(cal.getTime());
+
+        return date;
+    }
+
     public FlightGUI(ListOfFlights listOfFlights, ListOfAirlines listOfAirlines, ListOfAirports listOfAirports, ListOfAeroplanes listOfAeroplanes)
     {
         this.listOfFlights = listOfFlights;
         this.listOfAirlines = listOfAirlines;
         this.listOfAirports = listOfAirports;
         this.listOfAeroplanes = listOfAeroplanes;
-
 
         setTitle("Flight Tracking System"); //set up window title
         setDefaultCloseOperation(EXIT_ON_CLOSE); //exit out of application
@@ -82,10 +94,9 @@ public class FlightGUI extends JFrame implements ActionListener {
         setVisible(true); //make the frame visible
     }
 
-//    THE FLIGHT LIST DISPLAY
-
-    private void setUpFlightPanel(){
-        JPanel flightPanel = new JPanel();
+    // GUI launcher function
+    private void displayFlightPanel(){
+        flightPanel = new JPanel();
         flightPanel.setBackground(Color.cyan);
         flightPanel.setBounds(0,0, 880, 350);
         flightPanel.setLayout(null);
@@ -114,6 +125,16 @@ public class FlightGUI extends JFrame implements ActionListener {
             rowData[3] = f.getArrivalAirport().getAirportCode();
             rowData[4] = f.getDepartureDate();
             rowData[5] = f.getDepartureTime();
+            
+            rowData[6] = listOfAirports.getAirportDetails(rowData[2].toString()).getControlTower().getLocation().getLat();
+            rowData[7] = listOfAirports.getAirportDetails(rowData[2].toString()).getControlTower().getLocation().getLon();
+            if(LocalDate.parse(f.getDepartureDate()).isBefore(LocalDate.parse(getDate()))){
+                rowData[8] = "Arrived";
+            }
+            else{
+                rowData[8] = "In Flight";
+            }
+            
             model.addRow(rowData);
         }
 
@@ -129,14 +150,17 @@ public class FlightGUI extends JFrame implements ActionListener {
                     Object modelvalue = flightTable.getModel().getValueAt(modelRow, columnIndex);
         
                     rowData[8] = 1;
-
                 }
             }
         });
 
         flightPanel.add(scrollPane);
-
         this.add(flightPanel);
+    }
+
+    // THE FLIGHT LIST DISPLAY
+    private void setUpFlightPanel(){
+        displayFlightPanel();
     }
 
     private void setUpFlightPlanPanel(){
@@ -176,10 +200,8 @@ public class FlightGUI extends JFrame implements ActionListener {
 
                     fpPane.setViewportView(listFlightPlanList);
                 }
-
             }
         });
-
         flightPlanPanel.add(fpPane);
     }
 
@@ -211,7 +233,7 @@ public class FlightGUI extends JFrame implements ActionListener {
                     // Object tablevalue =flightTable.getValueAt(viewRow, columnIndex);
                     String fKey = (String) modelvalue;
                     // String tKey = (String) tablevalue;
-
+                    System.out.println(fKey);
                     Flight v = listOfFlights.get(fKey);
                     FlightPlan fl = listOfFlights.get(fKey).getFlightPlan();
                     int i = v.getFlightPlan().getFlightPlanTotalDistance();
@@ -222,23 +244,18 @@ public class FlightGUI extends JFrame implements ActionListener {
 
                     @Override
                     protected Void doInBackground() throws Exception {
-                        
-                            
+
                             ArrayList<Flight> list = listOfFlights.flightIterator();
                             for(Flight f: list){
                                 f.start();
                                 Thread.sleep(60000);
-                                f.interrupt();}
-                                
-                            
+                                f.interrupt();
+                            }
                         return null;
                     }
-                    
                 };
                 worker.execute();
-
             }}
-
         });
         detailsPanel.add(txtDistance);
 
@@ -344,12 +361,9 @@ public class FlightGUI extends JFrame implements ActionListener {
         });
 
         detailsPanel.add(txtEmissions);
-
         lblKilogram = new JLabel("kg");
         lblKilogram.setBounds(225, 260, 35, 35);
         detailsPanel.add(lblKilogram);
-
-
     }
 
     public void setUpAddFlightTitlePanel(){
@@ -499,7 +513,6 @@ public class FlightGUI extends JFrame implements ActionListener {
         addFlightPlanPanel.add(airportComboBox3);
         addFlightPlanPanel.add(airportComboBox4);
         addFlightPlanPanel.add(airportComboBox5);
-
     }
 
     private void setUpButtonsPanel(){
@@ -529,8 +542,8 @@ public class FlightGUI extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnAdd) {
            AddBtnActionPerformed();
-           
         }
+
         else if (e.getSource() == btnCancel) {
             planeComboBox.setSelectedItem("Choose..");
             txtNumber.setText(null);
@@ -544,8 +557,6 @@ public class FlightGUI extends JFrame implements ActionListener {
             airportComboBox3.setSelectedItem("Choose..");
             airportComboBox4.setSelectedItem("Choose..");
             airportComboBox5.setSelectedItem("Choose..");
-
-            
         }
 
         else if (e.getSource() == btnExit) {
@@ -565,124 +576,131 @@ public class FlightGUI extends JFrame implements ActionListener {
         //code to load data into table
         //Store the data inot a new instance of flight
 
-                //Retrieve values from the text boxes
-                String date = txtDate.getText();
-                String time = txtTimeAddFlight.getText();
-                String flightNo = txtNumber.getText();
-        
-                String airlineName = airlineComboBox.getSelectedItem().toString();
-                // Airline airline = listOfAirlines.getListOfAirlines().get(airlineKey);
-                Airline obj = listOfAirlines.retrieveCompanyName(airlineName);
-                String airlineCode = obj.getAirlineCode();
-        
-                String departKey = departureComboBox.getSelectedItem().toString();
-                // Airport departure = listOfAirports.getListOfAirports().get(departKey);
-        
-                String destKey = destinationComboBox.getSelectedItem().toString();
-                // Airport destination = listOfAirports.getListOfAirports().get(destKey);
-        
-                String planeKey = planeComboBox.getSelectedItem().toString();
-                // Aeroplane plane = listOfAeroplanes.getListOfAeroplanes().get(planeKey);
-        
-                String port1Key = airportComboBox1.getSelectedItem().toString();
-                // Airport t1 = listOfAirports.getListOfAirports().get(port1Key);
-        
-                String port2Key = airportComboBox2.getSelectedItem().toString();
-                // Airport t2 = listOfAirports.getListOfAirports().get(port2Key);
-        
-                String port3Key = airportComboBox3.getSelectedItem().toString();
-                // Airport t3 = listOfAirports.getListOfAirports().get(port3Key);
-        
-                String port4Key = airportComboBox4.getSelectedItem().toString();
-                // Airport t4 = listOfAirports.getListOfAirports().get(port4Key);
-        
-                String port5Key = airportComboBox5.getSelectedItem().toString();
-                // Airport t5 = listOfAirports.getListOfAirports().get(port5Key);
-        
-                // Flight additionalFlight = new Flight(flightNo, airline, plane, departKey, destKey, date, time, plan);
-                String output= "\n" + airlineCode + flightNo + "; " + airlineName + "; " + 
-                                      planeKey + "; " + departKey + "; " + destKey + "; " + 
-                                      date + "; " + time + "; " + port1Key + "; " + 
-                                      port2Key + "; " + port3Key + "; " + port4Key + "; " +
-                                      port5Key;
+        //Retrieve values from the text boxes
+        String date = txtDate.getText();
+        String time = txtTimeAddFlight.getText();
+        String flightNo = txtNumber.getText();
+    
+        String airlineName = airlineComboBox.getSelectedItem().toString();
+        // Airline airline = listOfAirlines.getListOfAirlines().get(airlineKey);
+        Airline obj = listOfAirlines.retrieveCompanyName(airlineName);
+        String airlineCode = obj.getAirlineCode();
+    
+        String departKey = departureComboBox.getSelectedItem().toString();
+        // Airport departure = listOfAirports.getListOfAirports().get(departKey);
+    
+        String destKey = destinationComboBox.getSelectedItem().toString();
+        // Airport destination = listOfAirports.getListOfAirports().get(destKey);
+    
+        String planeKey = planeComboBox.getSelectedItem().toString();
+        // Aeroplane plane = listOfAeroplanes.getListOfAeroplanes().get(planeKey);
+    
+        String port1Key = airportComboBox1.getSelectedItem().toString();
+        // Airport t1 = listOfAirports.getListOfAirports().get(port1Key);
+    
+        String port2Key = airportComboBox2.getSelectedItem().toString();
+        // Airport t2 = listOfAirports.getListOfAirports().get(port2Key);
+    
+        String port3Key = airportComboBox3.getSelectedItem().toString();
+        // Airport t3 = listOfAirports.getListOfAirports().get(port3Key);
+    
+        String port4Key = airportComboBox4.getSelectedItem().toString();
+        // Airport t4 = listOfAirports.getListOfAirports().get(port4Key);
+    
+        String port5Key = airportComboBox5.getSelectedItem().toString();
+        // Airport t5 = listOfAirports.getListOfAirports().get(port5Key);
+    
+        // Flight additionalFlight = new Flight(flightNo, airline, plane, departKey, destKey, date, time, plan);
+        String output= "\n" + airlineCode + flightNo + "; " + airlineName + "; " + 
+                              planeKey + "; " + departKey + "; " + destKey + "; " + 
+                              date + "; " + time + "; " + port1Key + "; " + 
+                              port2Key + "; " + port3Key + "; " + port4Key + "; " +
+                              port5Key;
 
-                //Only 4 entries in the flight plan
-                String output4= "\n"+ airlineCode + flightNo + "; " + airlineName + "; " + 
-                                      planeKey + "; " + departKey + "; " + destKey + "; " + 
-                                      date + "; " + time + "; " + port1Key + "; " + 
-                                      port2Key + "; " + port3Key + "; " + port4Key;
+        //Only 4 entries in the flight plan
+        String output4= "\n"+ airlineCode + flightNo + "; " + airlineName + "; " + 
+                              planeKey + "; " + departKey + "; " + destKey + "; " + 
+                              date + "; " + time + "; " + port1Key + "; " + 
+                              port2Key + "; " + port3Key + "; " + port4Key;
 
-                //Only 3 entries in th flight plan
-                String output3= "\n"+ airlineCode + flightNo + "; " + airlineName + "; " +
-                                      planeKey + "; " + departKey + "; " + destKey + "; " +
-                                      date + "; " + time + "; " + port1Key + "; " + 
-                                      port2Key + "; " + port3Key;
+        //Only 3 entries in th flight plan
+        String output3= "\n"+ airlineCode + flightNo + "; " + airlineName + "; " +
+                              planeKey + "; " + departKey + "; " + destKey + "; " +
+                              date + "; " + time + "; " + port1Key + "; " + 
+                              port2Key + "; " + port3Key;
 
-                //only 2 entries in the flight plan
-                String output2= "\n"+ airlineCode + flightNo + "; " + airlineName + "; " +
-                                      planeKey + "; " + departKey + "; " + destKey + "; " +
-                                      date + "; " + time + "; " + port1Key + "; " + 
-                                      port2Key;
+        //only 2 entries in the flight plan
+        String output2= "\n"+ airlineCode + flightNo + "; " + airlineName + "; " +
+                              planeKey + "; " + departKey + "; " + destKey + "; " +
+                              date + "; " + time + "; " + port1Key + "; " + 
+                              port2Key;
+    
+        try
+        {
+            if  (airportComboBox1.getSelectedItem() == "Choose.." || 
+                airportComboBox2.getSelectedItem() == "Choose.." || 
+                flightNo == null || airlineName == null || 
+                planeKey == null || departKey == null || 
+                destKey == null || date == null || time == null){
+                JOptionPane.showMessageDialog(null, "Please Fill  up all the fields before clicking the \"ADD\" button");
+                throw new IllegalArgumentException("Please add all the flight details required");
+            }
+          
+            else if (airportComboBox1.getSelectedItem() !="Choose.."&&airportComboBox2.getSelectedItem()!="Choose.."&&airportComboBox3.getSelectedItem()!="Choose.."&&airportComboBox4.getSelectedItem()!="Choose.."&&airportComboBox5.getSelectedItem()!="Choose.."){
+                Files.write(Paths.get("src/listofflights.txt"),
+                output.getBytes(), StandardOpenOption.APPEND);
+                logs.logAddFlight(output);
+            }
+
+            else if (airportComboBox3.getSelectedItem()=="Choose.."){
+                Files.write(Paths.get("src/listofflights.txt"),
+                output2.getBytes(), StandardOpenOption.APPEND);
+                logs.logAddFlight(output2);
+            }
+
+            else if (airportComboBox4.getSelectedItem()=="Choose.."){
+                Files.write(Paths.get("src/listofflights.txt"),
+                output3.getBytes(), StandardOpenOption.APPEND);
+                logs.logAddFlight(output3);
+            }
+
+            else if (airportComboBox5.getSelectedItem()=="Choose.."){
+                Files.write(Paths.get("src/listofflights.txt"),
+                output4.getBytes(), StandardOpenOption.APPEND);
+                logs.logAddFlight(output4);
+            }
+
+            else if  (airportComboBox1.getSelectedItem() =="Choose.."||airportComboBox2.getSelectedItem()=="Choose.."||flightNo==null||airlineName==null||planeKey==null||departKey==null||destKey==null||date==null||time==null){
+                Files.write(Paths.get("src/listofflights.txt"),
+                output.getBytes(), StandardOpenOption.APPEND);
+                logs.logAddFlight(output);
+            }
         
-                try
-                {
-                if  (airportComboBox1.getSelectedItem() =="Choose.."||airportComboBox2.getSelectedItem()=="Choose.."||flightNo==null||airlineName==null||planeKey==null||departKey==null||destKey==null||date==null||time==null){
-                    JOptionPane.showMessageDialog(null, "Please Fill  up all the fields before clicking the \"ADD\" button");
-                    throw new IllegalArgumentException("Please add all the flight details required");
-        
-                }
-                  
-                else if (airportComboBox1.getSelectedItem() !="Choose.."&&airportComboBox2.getSelectedItem()!="Choose.."&&airportComboBox3.getSelectedItem()!="Choose.."&&airportComboBox4.getSelectedItem()!="Choose.."&&airportComboBox5.getSelectedItem()!="Choose.."){
-                    Files.write(Paths.get("src/listofflights.txt"),
-                    output.getBytes(), StandardOpenOption.APPEND);
-                    logs.logAddFlight(output);
-                }
-                else if (airportComboBox3.getSelectedItem()=="Choose.."){
-                    Files.write(Paths.get("src/listofflights.txt"),
-                    output2.getBytes(), StandardOpenOption.APPEND);
-                    logs.logAddFlight(output2);
-                }
-                else if (airportComboBox4.getSelectedItem()=="Choose.."){
-                    Files.write(Paths.get("src/listofflights.txt"),
-                    output3.getBytes(), StandardOpenOption.APPEND);
-                    logs.logAddFlight(output3);
-                }
-                else if (airportComboBox5.getSelectedItem()=="Choose.."){
-                    Files.write(Paths.get("src/listofflights.txt"),
-                    output4.getBytes(), StandardOpenOption.APPEND);
-                    logs.logAddFlight(output4);
-                }
-                else if  (airportComboBox1.getSelectedItem() =="Choose.."||airportComboBox2.getSelectedItem()=="Choose.."||flightNo==null||airlineName==null||planeKey==null||departKey==null||destKey==null||date==null||time==null){
-                    Files.write(Paths.get("src/listofflights.txt"),
-                    output.getBytes(), StandardOpenOption.APPEND);
-                    logs.logAddFlight(output);
-                }
-               
-                    JOptionPane.showMessageDialog(null, " Flight successfully added! ");
-                    
-                    // clear fields for new entry
-                    txtTimeAddFlight.setText(null);
-                    airportComboBox1.setSelectedItem("Choose..");
-                    airportComboBox2.setSelectedItem("Choose..");
-                    airportComboBox3.setSelectedItem("Choose..");
-                    airportComboBox4.setSelectedItem("Choose..");
-                    airportComboBox5.setSelectedItem("Choose..");
-                    airlineComboBox.setSelectedItem("Choose..");
-                    txtNumber.setText("");
-                    planeComboBox.setSelectedItem("Choose..");
-                    departureComboBox.setSelectedItem("Choose..");
-                    destinationComboBox.setSelectedItem("Choose..");
-                    txtDate.setText("");
+            JOptionPane.showMessageDialog(null, " Flight successfully added! ");
+            
+            // clear fields for new entry
+            txtTimeAddFlight.setText(null);
+            airportComboBox1.setSelectedItem("Choose..");
+            airportComboBox2.setSelectedItem("Choose..");
+            airportComboBox3.setSelectedItem("Choose..");
+            airportComboBox4.setSelectedItem("Choose..");
+            airportComboBox5.setSelectedItem("Choose..");
+            airlineComboBox.setSelectedItem("Choose..");
+            txtNumber.setText("");
+            planeComboBox.setSelectedItem("Choose..");
+            departureComboBox.setSelectedItem("Choose..");
+            destinationComboBox.setSelectedItem("Choose..");
+            txtDate.setText("");
 
-                    // this.invalidate();
-                    ControllerFlightGUI demo = new ControllerFlightGUI();
-                    demo.updateGUI();
-                }
+            // this.invalidate();
+            ControllerFlightGUI demo = new ControllerFlightGUI();
+            //setUpFlightPanel();
+            demo.updateGUI();
+        }
 
-                catch(IOException e)
-                {
-                    e.printStackTrace();
-                }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 }
-

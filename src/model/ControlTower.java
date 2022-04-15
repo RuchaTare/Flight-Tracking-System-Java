@@ -1,6 +1,5 @@
 package model;
 
-import java.util.ResourceBundle.Control;
 
 public class ControlTower {
     private String locationName;
@@ -29,7 +28,6 @@ public class ControlTower {
     static ControlTower tower = null;
 
 	private ControlTower() {
-
 	}
 
 	public static ControlTower getControlTower() {
@@ -40,7 +38,6 @@ public class ControlTower {
 				}
 			}
 		}
-
 		return tower;
 	}
 

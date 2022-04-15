@@ -15,7 +15,7 @@ public class ControllerFlightGUI {
     private ListOfAirlines listOfAirlines;
     private ListOfAirports listOfAirports;
     private ListOfAeroplanes listOfAeroplanes;
-    //private Flight flight;
+    private FlightGUI flightGUI;
 
     public ControllerFlightGUI() {
         //initialise empty list of flight tracker elements
@@ -44,10 +44,8 @@ public class ControllerFlightGUI {
 
     public void showGUI() {
         //create main GUI with gsCompetitorList object
-        FlightGUI gui = new FlightGUI(listOfFlights,listOfAirlines,listOfAirports, listOfAeroplanes);
-        gui.setVisible(true);
-        
-
+        flightGUI = new FlightGUI(listOfFlights,listOfAirlines,listOfAirports, listOfAeroplanes);
+        flightGUI.setVisible(true);
     }
 
     public void tryThis() throws InterruptedException{
@@ -57,9 +55,8 @@ public class ControllerFlightGUI {
             
             f.start();
             Thread.sleep(60000);
-            }
-            // f.interrupt();
         }
+    }
 
     public void updateGUI(){
         listOfAeroplanes = new ListOfAeroplanes();
@@ -77,6 +74,6 @@ public class ControllerFlightGUI {
         listOfAirlines = new ListOfAirlines(listOfFlights);
         listOfAirlines.readFileAirline();
         listOfAirlines.addFlights();
-        FlightGUI gui = new FlightGUI(listOfFlights, listOfAirlines, listOfAirports, listOfAeroplanes);
+        flightGUI = new FlightGUI(listOfFlights, listOfAirlines, listOfAirports, listOfAeroplanes);
     }
 }

@@ -245,7 +245,5 @@ public class GPSCoordinates {
     public String toString() {
         return "GPS [lat = " + String.format("%.2f", lat) + ", lon = " + String.format("%.2f", lon) + "]";
     }
-
-
 }
 
