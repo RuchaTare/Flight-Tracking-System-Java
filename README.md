@@ -1,4 +1,4 @@
-# F21AS-Stage2
+# Flight Tracking System In Java
 This repository is for Advanced Software Engineering
 
 ## Purpose
